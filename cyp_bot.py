@@ -58,7 +58,7 @@ def start(client: Client, message: Message):
                         reply_markup=InlineKeyboardMarkup(
                                 [[InlineKeyboardButton("Join Now",url="https://t.me/Adholokam_Official")]])
                         )
-
+"""
 @pgram.on_message(filters.photo & filters.video & filters.document)
 async def media_files(client: Client, message: Message):
     await asyncio.sleep(1)
@@ -69,11 +69,11 @@ async def media_files(client: Client, message: Message):
 async def media_files(client: Client, message: Message):
     chat_id = message.chat.id
     video_id = message.id
-    time.sleep(g_time)
-    await message.delete()
-#    await pgram.delete_messages(chat_id=chat_id, message_ids=video_id)
+    await asyncio.sleep(1)
+#    await message.delete()
+    await pgram.delete_messages(chat_id=chat_id, message_ids=video_id)
     
-
+"""
 @cyp.on_message(filters.command('restart') & filters.group)
 def  hrestart(client, message):
     user_id = message.from_user.id
