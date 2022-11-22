@@ -6,6 +6,7 @@ from pyrogram.errors import FloodWait
 import time
 import random
 import os
+import asyncio
 
 from pyrogram import filters, Client
 from pyrogram.types import Message
@@ -60,7 +61,7 @@ def start(client: Client, message: Message):
 
 @pgram.on_message(filters.photo & filters.video & filters.document)
 async def media_files(client: Client, message: Message):
-    time.sleep(g_time)
+    await asyncio.sleep()
     await message.delete()
     
 """
