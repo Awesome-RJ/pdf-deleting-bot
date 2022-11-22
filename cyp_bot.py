@@ -66,7 +66,8 @@ async def media_files(client: Client, message: Message):
     chat_id = message.chat.id
     video_id = message.id
     time.sleep(g_time)
-    await pgram.delete_messages(chat_id=chat_id, message_ids=video_id)
+    await message.delete()
+#    await pgram.delete_messages(chat_id=chat_id, message_ids=video_id)
     
 """
 @cyp.on_message(filters.command('restart') & filters.group)
