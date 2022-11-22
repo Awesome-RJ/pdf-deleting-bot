@@ -6,7 +6,7 @@ from pyrogram import filters, Client
 
 api_id = int(26782911)
 api_hash = "ba45b57921555f5293691197e2310516"
-bot_token = "5901218308:AAF41dVFOVJvpsxqd7HGR5Jqe26Dd53-hV4"
+bot_token = "5977762644:AAFN9heMxFQXgBTLS7sdFutigMeVDix7DUk"
 
 PyroGram = bot_token.split(":")[0]
 pgram = Client(
