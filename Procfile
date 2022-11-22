@@ -1,1 +1,1 @@
-worker: python3 cyp_bot.py
+worker: python3 pdf_deleting.py
