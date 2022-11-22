@@ -88,4 +88,4 @@ def  hrestart(client, message):
             msg.edit("failed to restart")
             admins.clear()
 """
-pgram.start()
+pgram.run()
