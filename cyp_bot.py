@@ -46,7 +46,7 @@ print("bot starting")
 @cyp.on_message(filters.command(['start']) & filters.private)
 def start(client, message):
     message.reply_photo(photo=random.choice(start_img),
-                        caption= "💣 അധോലോകം💣",
+                        caption= "Rajkumar",
                         reply_markup=InlineKeyboardMarkup(
                                 [[InlineKeyboardButton("Join Now",url="https://t.me/Adholokam_Official")]])
                         )
@@ -58,7 +58,8 @@ def media_files(client, message):
     video_id = message.message_id
     time.sleep(g_time)
     cyp.delete_messages(chat_id=chat_id, message_ids=video_id)
-               
+    
+"""
 @cyp.on_message(filters.command('restart') & filters.group)
 def  hrestart(client, message):
     user_id = message.from_user.id
@@ -73,5 +74,5 @@ def  hrestart(client, message):
         except Exception:
             msg.edit("failed to restart")
             admins.clear()
-        
+"""
 cyp.run()
