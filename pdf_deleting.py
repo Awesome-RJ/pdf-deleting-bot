@@ -13,10 +13,7 @@ pgram = Client(
     name=PyroGram,
     api_id=api_id,
     api_hash=api_hash,
-    bot_token=bot_token,
-#    workers=min(32, os.cpu_count() + 4),
-#    sleep_threshold=60,
-#    in_memory=True,
+    bot_token=bot_token
 )
 print("Bot starting")
 
@@ -24,6 +21,5 @@ print("Bot starting")
 async def media_files(client, message) -> None:
     await asyncio.sleep(1)
     await message.delete()
-    await bot.send_message(message.chat.id, "Alert!\nmedia detected!")
 
 pgram.run()
