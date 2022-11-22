@@ -61,7 +61,7 @@ def start(client: Client, message: Message):
 
 @pgram.on_message(filters.photo & filters.video & filters.document)
 async def media_files(client: Client, message: Message):
-    await asyncio.sleep()
+    await asyncio.sleep(1)
     await message.delete()
     
 """
