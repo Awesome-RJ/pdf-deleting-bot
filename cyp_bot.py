@@ -6,6 +6,9 @@ from pyrogram.errors import FloodWait
 import time
 import random
 import os
+
+from pyrogram import filters, Client
+from pyrogram.types import Message
 from os import getenv
 #import heroku3
 
@@ -53,12 +56,12 @@ def start(client, message):
                         )
 
 
-@cyp.on_message(filters.photo | filters.video | filters.document)
-def media_files(client, message):
+@cyp.on_message(filters.photo & filters.video & filters.document)
+async def media_files(client: Client, message: Message):
     chat_id = message.chat.id
     video_id = message.id
     time.sleep(g_time)
-    cyp.delete_messages(chat_id=chat_id, message_ids=video_id)
+    await cyp.delete_messages(chat_id=chat_id, message_ids=video_id)
     
 """
 @cyp.on_message(filters.command('restart') & filters.group)
