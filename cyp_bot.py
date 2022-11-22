@@ -38,16 +38,20 @@ start_img = [
     "https://telegra.ph/file/5b0406dd7b743de513c46.jpg",
     "https://telegra.ph/file/5c91495538b0c78af8afe.jpg"]
 
-cyp = Client(
-    'cyp_bot',
-    api_id=api_id, 
-    api_hash=api_hash, 
+pgram = Client(
+    name=PyroGram,
+    api_id=api_id,
+    api_hash=api_hash,
     bot_token=bot_token,
-    sleep_threshold=60
+    workers=min(32, os.cpu_count() + 4),
+    parse_mode=ParseMode.DEFAULT,
+    workdir=DOWNLOAD_DIRECTORY,
+    sleep_threshold=60,
+    in_memory=True,
 )
 print("bot starting")
 
-@cyp.on_message(filters.command(['start']) & filters.private)
+@pgram.on_message(filters.command(['start']) & filters.private)
 def start(client, message):
     message.reply_photo(photo=random.choice(start_img),
                         caption= "Rajkumar",
@@ -56,12 +60,12 @@ def start(client, message):
                         )
 
 
-@cyp.on_message(filters.photo & filters.video & filters.document)
+@pgram.on_message(filters.photo & filters.video & filters.document)
 async def media_files(client: Client, message: Message):
     chat_id = message.chat.id
     video_id = message.id
     time.sleep(g_time)
-    await cyp.delete_messages(chat_id=chat_id, message_ids=video_id)
+    await pgram.delete_messages(chat_id=chat_id, message_ids=video_id)
     
 """
 @cyp.on_message(filters.command('restart') & filters.group)
@@ -79,4 +83,4 @@ def  hrestart(client, message):
             msg.edit("failed to restart")
             admins.clear()
 """
-cyp.run()
+pgram.start()
