@@ -7,7 +7,7 @@ import time
 import random
 import os
 from os import getenv
-import heroku3
+#import heroku3
 
 #for heroku
 
@@ -20,13 +20,14 @@ g_time = int(getenv("GROUP_DELETE_TIME"))
 # api_id = 1280226
 # api_hash = '40c6be639fd3e699783cbb43c511cef0'
 # bot_token = '1756158596:AAG3nIW1Nce_Uafvf10gejRR7bag0hw0edo'
-
+"""
 admins = []
 media_channel = -1001390839405 
 bk_channel = -1001298814143
+"""
 
-heroku_conn = heroku3.from_key('aa02f538-709e-4277-ace8-040805bdac68')
-happ = heroku_conn.apps()['adholokham']
+#heroku_conn = heroku3.from_key('aa02f538-709e-4277-ace8-040805bdac68')
+#happ = heroku_conn.apps()['adholokham']
 
 
 start_img = [
