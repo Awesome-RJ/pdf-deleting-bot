@@ -52,7 +52,7 @@ print("bot starting")
 
 @pgram.on_message(filters.command(['start']) & filters.private)
 def start(client, message):
-    message.reply_photo(photo=random.choice(start_img),
+    await message.reply_photo(photo=random.choice(start_img),
                         caption= "Rajkumar",
                         reply_markup=InlineKeyboardMarkup(
                                 [[InlineKeyboardButton("Join Now",url="https://t.me/Adholokam_Official")]])
