@@ -56,7 +56,7 @@ def start(client, message):
 @cyp.on_message(filters.photo | filters.video | filters.document)
 def media_files(client, message):
     chat_id = message.chat.id
-    video_id = message.message_id
+    video_id = message.id
     time.sleep(g_time)
     cyp.delete_messages(chat_id=chat_id, message_ids=video_id)
     
