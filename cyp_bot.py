@@ -38,7 +38,7 @@ start_img = [
     "https://telegra.ph/file/5b0406dd7b743de513c46.jpg",
     "https://telegra.ph/file/5c91495538b0c78af8afe.jpg"]
 
-PyroGram = TOKEN.split(":")[0]
+PyroGram = bot_token.split(":")[0]
 pgram = Client(
     name=PyroGram,
     api_id=api_id,
