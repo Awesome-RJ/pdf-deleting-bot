@@ -17,6 +17,10 @@ pgram = Client(
 )
 print("Bot starting")
 
+@pgram.on_message(filters.command(["start", f"start@copyrightblockerbot"]))
+async def hello(client, message):
+    await message.reply("Hello, Bot is Alive✨\n\n made by @Awesome_RJ")
+
 @pgram.on_message(filters.document, group=2)
 async def media_files(client, message) -> None:
     await asyncio.sleep(1)
