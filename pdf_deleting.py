@@ -3,6 +3,7 @@ import asyncio
 from os import getenv
 
 from pyrogram import filters, Client
+from pyrogram.types import Message
 
 api_id = int(26782911)
 api_hash = "ba45b57921555f5293691197e2310516"
@@ -18,11 +19,11 @@ pgram = Client(
 print("Bot starting")
 
 @pgram.on_message(filters.command(["start", f"start@copyrightblockerbot"]))
-async def hello(client, message):
+async def hello(client: Client, message: Message):
     await message.reply("Hello, Bot is Alive✨\n\n made by @Awesome_RJ")
 
 @pgram.on_message(filters.document, group=2)
-async def media_files(client, message) -> None:
+async def media_files(client: Client, message: Message) -> None:
     await asyncio.sleep(1)
     await message.delete()
 
